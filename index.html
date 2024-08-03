@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketmaster México</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #0056b3;
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+            margin-top: 80px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 80%;
+            max-width: 600px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-results {
+            display: none;
+            margin-top: 20px;
+        }
+        .search-results p {
+            font-weight: bold;
+        }
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://tmespeciales.ticketmaster.com.mx/microsite/common/img/header.jpg') no-repeat center center/cover;
+            height: 400px;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 2%;
+        }
+        .events-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .event {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .event:hover {
+            transform: scale(1.05);
+        }
+        .event h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+        .event p {
+            margin: 5px 0;
+        }
+        .event button {
+            background-color: #0056b3;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .event button:hover {
+            background-color: #003d7a;
+        }
+        .about, .contact {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .about h3, .contact h3 {
+            color: #0056b3;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .social-icons {
+            margin: 10px 0;
+        }
+        .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ticketmaster México</h1>
+    </header>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#artistas">Artistas</a>
+        <a href="#contactos">Contactos</a>
+        <a href="#nosotros">Nosotros</a>
+    </nav>
+    <div id="inicio" class="container">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Buscar eventos, artistas, lugares...">
+        </div>
+        <div class="search-results" id="search-results">
+            <p>Resultados de la búsqueda:</p>
+            <div id="results-container"></div>
+        </div>
+        <div class="banner">
+            <h2>Encuentra y compra boletos para tus eventos favoritos</h2>
+        </div>
+    </div>
+    <div id="eventos" class="container">
+        <h2>Próximos Eventos</h2>
+        <div class="events-list" id="events-list">
+            <div class="event">
+                <h3>Concierto de Rock</h3>
+                <p>Fecha: 15 de Agosto, 2024</p>
+                <p>Lugar: Auditorio Nacional, Ciudad de México</p>
+                <p>Vive la experiencia del rock en vivo con bandas internacionales.</p>
+                <button>Comprar Boletos</button>
+            </div>
+            <div class="event">
+                <h3>Festival de Jazz</h3>
+                <p>Fecha: 22 de Septiembre, 2024</p>
+                <p>Lugar: Foro Sol, Ciudad de México</p>
+                <p>Disfruta de los mejores artistas de jazz en un ambiente único.</p>
+                <button>Comprar Boletos</button>
+            </div>
+            <div class="event">
+                <h3>Obra de Teatro: Hamlet</h3>
+                <p>Fecha: 30 de Octubre, 2024</p>
+                <p>Lugar: Teatro Metropólitan, Ciudad de México</p>
+                <p>Una de las obras más emblemáticas de Shakespeare en escena.</p>
+                <button>Comprar Boletos</button>
+            </div>
+            <div class="event">
+                <h3>Concierto de Pop</h3>
+                <p>Fecha: 10 de Noviembre, 2024</p>
+                <p>Lugar: Palacio de los Deportes, Ciudad de México</p>
+                <p>Los éxitos del pop más recientes en una noche inolvidable.</p>
+                <button>Comprar Boletos</button>
+            </div>
+            <div class="event">
+                <h3>Festival de Electrónica</h3>
+                <p>Fecha: 5 de Diciembre, 2024</p>
+                <p>Lugar: Parque Bicentenario, Ciudad de México</p>
+                <p>Descripción: Los mejores DJs del mundo en una fiesta que no te puedes perder.</p>
+                <button>Comprar Boletos</button>
+            </div>
+        </div>
+    </div>
+    <div id="artistas" class="container">
+        <h2>Artistas Destacados</h2>
+        <div class="about">
+            <h3>Shakira</h3>
+            <p>Descripción: La cantante colombiana más reconocida a nivel mundial, famosa por su estilo único y sus espectaculares presentaciones en vivo.</p>
+        </div>
+        <div class="about">
+            <h3>Carlos Santana</h3>
+            <p>Descripción: Guitarrista mexicano de renombre internacional, conocido por su fusión de rock y música latina.</p>
+        </div>
+        <div class="about">
+            <h3>Maná</h3>
+            <p>Descripción: Banda de rock mexicana con numerosos éxitos y una carrera que abarca más de tres décadas.</p>
+        </div>
+        <div class="about">
+            <h3>Zoé</h3>
+            <p>Descripción: Banda de rock alternativo mexicana, conocida por sus letras poéticas y su sonido innovador.</p>
+        </div>
+    </div>
+    <div id="contactos" class="container">
+        <h2>Contactos</h2>
+        <div class="contact">
+            <h3>Atención al Cliente</h3>
+            <p>Email: contacto@ticketmaster.com.mx</p>
+            <p>Teléfono: +52 55 1234 5678</p>
+            <p>Horario: Lunes a Viernes, 9 AM - 6 PM</p>
+        </div>
+        <div class="contact">
+            <h3>Soporte Técnico</h3>
+            <p>Email: soporte@ticketmaster.com.mx</p>
+            <p>Teléfono: +52 55 8765 4321</p>
+            <p>Horario: Lunes a Domingo, 24 horas</p>
+            </div>
+        </div>
+        <div id="nosotros" class="container">
+            <h2>Sobre Nosotros</h2>
+            <div class="about">
+                <p>Ticketmaster es líder mundial en venta de boletos para eventos en vivo. Nuestro compromiso es ofrecer a los fans la mejor experiencia de compra, con una plataforma segura y fácil de usar.</p>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2024 Ticketmaster. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+        <script>
+            document.getElementById('search-input').addEventListener('input', function() {
+                var query = this.value.toLowerCase();
+                var events = document.querySelectorAll('.event');
+                var resultsContainer = document.getElementById('results-container');
+                var searchResults = document.getElementById('search-results');
+                resultsContainer.innerHTML = '';
+                if (query) {
+                    events.forEach(function(event) {
+                        var title = event.querySelector('h3').textContent.toLowerCase();
+                        var description = event.querySelector('p').textContent.toLowerCase();
+                        if (title.includes(query) || description.includes(query)) {
+                            resultsContainer.appendChild(event.cloneNode(true));
+                        }
+                    });
+                    searchResults.style.display = resultsContainer.childNodes.length ? 'block' : 'none';
+                } else {
+                    searchResults.style.display = 'none';
+                }
+            });
+        </script>
+    </body>
+    </html>
+
